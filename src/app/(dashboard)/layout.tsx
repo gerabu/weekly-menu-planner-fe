@@ -10,7 +10,14 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar";
 
-export default function DashboardLayout({ children }: PropsWithChildren) {
+type DashboardLayoutProps = PropsWithChildren & {
+  modal: React.ReactNode;
+};
+
+export default function DashboardLayout({
+  children,
+  modal,
+}: DashboardLayoutProps) {
   return (
     <main>
       <SidebarProvider>
@@ -27,6 +34,8 @@ export default function DashboardLayout({ children }: PropsWithChildren) {
             </div>
           </header>
           {children}
+          {modal}
+          <div id="modal-root"></div>
         </SidebarInset>
       </SidebarProvider>
     </main>
