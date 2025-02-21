@@ -4,7 +4,7 @@ import { useActionState } from "react";
 
 import { generate } from "@/actions";
 import IngredientsForm from "./_components/ingredients-form";
-import PlanGrid from "./_components/plan-grid";
+import PlannerGrid from "./_components/planner-grid";
 
 export default function PlanPage() {
   const [state, formAction, isPending] = useActionState(generate, {
@@ -20,7 +20,7 @@ export default function PlanPage() {
         errors={state.errors}
       />
       <div className="min-h-[100vh] flex-1 md:min-h-min">
-        {state.data && <PlanGrid data={state.data} />}
+        {state.data && <PlannerGrid data={state.data} />}
       </div>
     </div>
   );

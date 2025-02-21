@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { PropsWithChildren } from "react";
 import { createPortal } from "react-dom";
 
@@ -9,7 +10,6 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { useRouter } from "next/navigation";
 
 export default function Modal({ children }: PropsWithChildren) {
   const router = useRouter();

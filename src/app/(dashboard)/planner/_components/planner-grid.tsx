@@ -1,20 +1,21 @@
+import Link from "next/link";
+
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
 import { Skeleton } from "@/components/ui/skeleton";
 import { WeeklyPlan } from "@/weekly-plan.type";
-import Link from "next/link";
 
-type PlanGridProps = {
+type PlannerGridProps = {
   data: WeeklyPlan;
 };
 
-export default function PlanGrid({ data }: PlanGridProps) {
+export default function PlannerGrid({ data }: PlannerGridProps) {
   return (
     <BentoGrid className="max-w-4xl mx-auto">
       {Object.entries(data).map(([day, { summary }], i) => (
         <BentoGridItem
           key={i}
           title={
-            <Link href={`/days/${day}`} passHref>
+            <Link href={`/day/${day}`} passHref>
               <p className="capitalize">{day}</p>
             </Link>
           }
